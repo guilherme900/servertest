@@ -2,10 +2,18 @@ from flask import Flask, request, jsonify,render_template
 from waitress import serve
 from flask_cors import CORS
 import hashlib
-
+import mysql.connector
 app = Flask(__name__)
 CORS(app)
 
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="MySQL80",
+  password="1234"
+)
+
+print(mydb)
 # Simulando um banco de dados com um dicionário
 users_db = {}
 
