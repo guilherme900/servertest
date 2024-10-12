@@ -40,7 +40,7 @@ mycursor.execute("""
         product INT NOT NULL,
         image BLOB NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (product) REFERENCES produts(id)
+        FOREIGN KEY (product) REFERENCES products(id)
         );
 """) 
 mycursor.execute("""
@@ -51,7 +51,7 @@ mycursor.execute("""
         statos ENUM('A','T','E') DEFAULT 'A'
         date DATETIME NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (product) REFERENCES produts(id),
+        FOREIGN KEY (product) REFERENCES products(id),
         FOREIGN KEY (user) REFERENCES users(id)
         );
 """)
