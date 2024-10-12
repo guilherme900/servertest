@@ -28,28 +28,28 @@ mycursor.execute("""
         name VARCHAR (30) NOT NULL,
         quantity INT NOT NULL,
         valor INT NOT NULL,
-        iduser INT NOT NULL,
+        user INT NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (iduser)
+        FOREIGN KEY (user) REFERENCES users(id)
         );
 """)
 mycursor.execute("""
         CREATE TABLE IF NOT EXISTS images(
         id  INT NOT NULL AUTO_INCREMENT,
-        idproduto INT NOT NULL,
+        produto INT NOT NULL,
         image BLOB NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (idproduto
+        FOREIGN KEY (produto) REFERENCES users(products),
         );
 """) 
 mycursor.execute("""
         CREATE TABLE IF NOT EXISTS ordems(
         id  INT NOT NULL AUTO_INCREMENT,
-        idproduto INT NOT NULL,
-        iduser INT NOT NULL,
+        produto INT NOT NULL,
+        user INT NOT NULL,
         PRIMARY KEY (id),
-        FOREIGN KEY (idproduto),
-        FOREIGN KEY (iduser)
+        FOREIGN KEY (produto) REFERENCES users(products),
+        FOREIGN KEY (user) REFERENCES users(id)
         );
 """)
 
