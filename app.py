@@ -7,13 +7,13 @@ app = Flask(__name__)
 CORS(app)
 
 
-mydb = mysql.connector.connect(
+db = mysql.connector.connect(
   host="localhost",
-  user="MySQL80",
+  user="root",
   password="1234"
 )
 
-print(mydb)
+print(db)
 # Simulando um banco de dados com um dicionário
 users_db = {}
 
