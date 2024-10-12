@@ -48,8 +48,8 @@ mycursor.execute("""
         id INT NOT NULL AUTO_INCREMENT,
         product INT NOT NULL,
         user INT NOT NULL,
-        statos ENUM('A','T','E') DEFAULT 'A'
-        date DATETIME NOT NULL,
+        statos ENUM('A','T','E') DEFAULT 'A',
+        date DATETIME DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id),
         FOREIGN KEY (product) REFERENCES products(id),
         FOREIGN KEY (user) REFERENCES users(id)
